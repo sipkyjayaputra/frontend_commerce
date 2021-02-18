@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Font Awesome CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+        <title>HGS Commerce</title>
+    </head>
+    <body style="background-image: url('body-background.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="shop.html"><strong>HGS</strong> <i>Commerce</i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="shop.html">Shop <span class="sr-only">(current)</span></a>
+                        </li>
+                        
+                        <form class="form-inline my-2 my-lg-0 ml-lg-5">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </ul>
+
+                    <span class="badge badge-secondary d-none d-lg-block">Not signed in</span>
+                    <div class="dropdown mx-3 nav-item">
+                        <a class="dropdown-toggle  text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user fa-lg"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                            <a class="dropdown-item" href="index.html">Logout</a>
+                        </div>
+                    </div>
+                    <a href="cart.html" class="text-dark nav-item"><i class="fa fa-shopping-cart fa-lg mx-2"></i></a>
+                </div>
+            </div>
+        </nav>
+        
+
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <div class="card-body py-5">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <img src="assets/images/products/digital_01.jpg" alt="" class="rounded-circle img-thumbnail" width="100px"> 
+                                                </div>
+                                                <div class="col py-3">
+                                                    <h5><strong>User Name</strong></h5>
+                                                    <p class="text-muted">user@user.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex-row mt-4">
+                                                <ul class="nav mb-3 nav-pills flex-column" id="pills-tab" role="tablist">
+                                                    <div class="col-12 py-2 bg-info"><strong> <i>Dashboard</i> </strong></div>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active my-2" id="pills-order-tab" data-toggle="pill" href="#pills-order" role="" aria-controls="pills-order" aria-selected="true"><i class="fa fa-shopping-cart mr-2"></i><strong>Order</strong></a>
+                                                    </li>
+                                                    <li class="nav-item my-2">
+                                                        <a class="nav-link" id="pills-wishlist-tab" data-toggle="pill" href="#pills-wishlist" role="" aria-controls="pills-wishlist" aria-selected="false"><i class="fa fa-heart mr-2"></i><strong>Wishlist</strong></a>
+                                                    </li>
+                                                    <div class="col-12 py-2 bg-info mt-4"><strong> <i>Account Settings</i> </strong></div>
+                                                    <li class="nav-item my-2">
+                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="" aria-controls="pills-profile" aria-selected="false"><i class="fa fa-user mr-2"></i><strong>Profile Info</strong></a>
+                                                    </li>
+                                                    <li class="nav-item my-2">
+                                                        <a class="nav-link" id="pills-addresses-tab" data-toggle="pill" href="#pills-addresses" role="" aria-controls="pills-addresses" aria-selected="false"><i class="fa fa-map mr-2"></i><strong>Addresses</strong></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                <div class="col-lg-8">
+                                    <div class="row mb-5">
+                                        <div class="col-md-12 text-right">
+                                            <a href="index.html" class="btn btn-danger btn-sm">Sign out <i class="fas fa-sign-out-alt ml-2"></i></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
+                                            <table class="table table-hovered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#Order</th>
+                                                        <th>Date Purchased</th>
+                                                        <th>Status</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Button trigger modal -->
+                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
+                                                                <strong>ABCD120932</strong> 
+                                                            </a>
+                                                        </td>
+                                                        <td>May 21, 2019</td>
+                                                        <td><span class="badge badge-success">Delivered</span></td>
+                                                        <td>Rp. X.XXX.XXX</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Button trigger modal -->
+                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
+                                                                <strong>ABCD120932</strong> 
+                                                            </a>
+                                                        </td>
+                                                        <td>May 21, 2019</td>
+                                                        <td><span class="badge badge-danger">Cancelled</span></td>
+                                                        <td>Rp. X.XXX.XXX</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Button trigger modal -->
+                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
+                                                                <strong>ABCD120932</strong> 
+                                                            </a>
+                                                        </td>
+                                                        <td>May 21, 2019</td>
+                                                        <td><span class="badge badge-warning">Delayed</span></td>
+                                                        <td>Rp. X.XXX.XXX</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Button trigger modal -->
+                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
+                                                                <strong>ABCD120932</strong> 
+                                                            </a>
+                                                        </td>
+                                                        <td>May 21, 2019</td>
+                                                        <td><span class="badge badge-info">In Progress</span></td>
+                                                        <td>Rp. X.XXX.XXX</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-wishlist" role="tabpanel" aria-labelledby="pills-wishlist-tab">b</div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <img src="assets/images/products/digital_02.jpg" alt="" class="img-thumbnail rounded" width="100px">
+                                                </div>
+                                                <div class="col py-3">
+                                                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i>Change Avatar</button>
+                                                    <p class="text-muted">Upload JPG, GIF or PNG image. 300 x 300 required</p>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label"><strong>First Name</strong></label>
+                                                        <input type="text" class="form-control" name="" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label"><strong>Last Name</strong></label>
+                                                        <input type="text" class="form-control" name="" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label"><strong>Email Address</strong></label>
+                                                        <input type="text" class="form-control" name="" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label"><strong>Phone Number</strong></label>
+                                                        <input type="text" class="form-control" name="" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label"><strong>New Password</strong></label>
+                                                        <input type="text" class="form-control" name="" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label"><strong>Confirm Password</strong></label>
+                                                        <input type="text" class="form-control" name="" id="">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="col-md-12">
+                                                    <button></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-addresses" role="tabpanel" aria-labelledby="pills-addresses-tab">d</div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Order No - ABCD120932</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="assets/images/products/digital_02.jpg" class="img-thumbnail" width="100px" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <h5><strong>Zomzang A50</strong></h5>
+                                <p class="text-muted">Lorem ipsum dolor..</p>
+                                <p class="">Rp. X.XXX.XXX</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><Strong>Quantity</Strong></p>
+                                <p>12</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><Strong>Total</Strong></p>
+                                <p>Rp. X.XXX.XXX</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="assets/images/products/digital_02.jpg" class="img-thumbnail" width="100px" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <h5><strong>Zomzang A50</strong></h5>
+                                <p class="text-muted">Lorem ipsum dolor..</p>
+                                <p class="">Rp. X.XXX.XXX</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><Strong>Quantity</Strong></p>
+                                <p>12</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><Strong>Total</Strong></p>
+                                <p>Rp. X.XXX.XXX</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="assets/images/products/digital_02.jpg" class="img-thumbnail" width="100px" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <h5><strong>Zomzang A50</strong></h5>
+                                <p class="text-muted">Lorem ipsum dolor..</p>
+                                <p class="">Rp. X.XXX.XXX</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><Strong>Quantity</Strong></p>
+                                <p>12</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><Strong>Subtotal</Strong></p>
+                                <p>Rp. X.XXX.XXX</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row text-muted">
+                            <div class="col">Sub: Rp. x.xxx.xxx</div>
+                            <div class="col">Ship: Rp. x.xxx.xxx</div>
+                            <div class="col">Tax: Rp. x.xxx.xxx</div>
+                            <div class="col">Total: Rp. x.xxx.xxx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
