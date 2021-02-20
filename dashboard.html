@@ -10,6 +10,7 @@
         <!-- Font Awesome CDN-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
+        <script src="assets/js/user/redirect_login.js"></script>
         <title>HGS Commerce</title>
     </head>
     <body style="background-image: url('body-background.jpg'); background-repeat: no-repeat; background-size: cover;">
@@ -33,17 +34,14 @@
                         </form>
                     </ul>
 
-                    <span class="badge badge-secondary d-none d-lg-block">Not signed in</span>
+                    <span class="badge d-none d-lg-block" id="login_status">Not signed in</span>
                     <div class="dropdown mx-3 nav-item">
                         <a class="dropdown-toggle  text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user fa-lg"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                            <a class="dropdown-item" href="index.html">Logout</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dd_user">
                         </div>
                     </div>
-                    <a href="cart.html" class="text-dark nav-item"><i class="fa fa-shopping-cart fa-lg mx-2"></i></a>
                 </div>
             </div>
         </nav>
@@ -92,7 +90,7 @@
                                 <div class="col-lg-8">
                                     <div class="row mb-5">
                                         <div class="col-md-12 text-right">
-                                            <a href="index.html" class="btn btn-danger btn-sm">Sign out <i class="fas fa-sign-out-alt ml-2"></i></a>
+                                            <a href="#" type="button" onclick="return logoutUser()" class="btn btn-danger btn-sm">Sign out <i class="fas fa-sign-out-alt ml-2"></i></a>
                                         </div>
                                     </div>
                                     
@@ -107,10 +105,9 @@
                                                         <th>Total</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
+                                                <tbody id="transaksi-list">
+                                                    <!-- <tr>
                                                         <td>
-                                                            <!-- Button trigger modal -->
                                                             <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
                                                                 <strong>ABCD120932</strong> 
                                                             </a>
@@ -118,40 +115,7 @@
                                                         <td>May 21, 2019</td>
                                                         <td><span class="badge badge-success">Delivered</span></td>
                                                         <td>Rp. X.XXX.XXX</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <!-- Button trigger modal -->
-                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
-                                                                <strong>ABCD120932</strong> 
-                                                            </a>
-                                                        </td>
-                                                        <td>May 21, 2019</td>
-                                                        <td><span class="badge badge-danger">Cancelled</span></td>
-                                                        <td>Rp. X.XXX.XXX</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <!-- Button trigger modal -->
-                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
-                                                                <strong>ABCD120932</strong> 
-                                                            </a>
-                                                        </td>
-                                                        <td>May 21, 2019</td>
-                                                        <td><span class="badge badge-warning">Delayed</span></td>
-                                                        <td>Rp. X.XXX.XXX</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <!-- Button trigger modal -->
-                                                            <a href="#" class="text-dark" type="button" data-toggle="modal" data-target="#exampleModal">
-                                                                <strong>ABCD120932</strong> 
-                                                            </a>
-                                                        </td>
-                                                        <td>May 21, 2019</td>
-                                                        <td><span class="badge badge-info">In Progress</span></td>
-                                                        <td>Rp. X.XXX.XXX</td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -167,45 +131,39 @@
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="" class="form-label"><strong>First Name</strong></label>
-                                                        <input type="text" class="form-control" name="" id="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="" class="form-label"><strong>Last Name</strong></label>
-                                                        <input type="text" class="form-control" name="" id="">
+                                                        <label for="" class="form-label"><strong>Full Name</strong></label>
+                                                        <input type="text" class="form-control" name="" id="fullname">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="" class="form-label"><strong>Email Address</strong></label>
-                                                        <input type="text" class="form-control" name="" id="">
+                                                        <input type="email" class="form-control" name="" id="email">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="" class="form-label"><strong>Phone Number</strong></label>
-                                                        <input type="text" class="form-control" name="" id="">
+                                                        <input type="text" class="form-control" name="" id="phone">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="" class="form-label"><strong>New Password</strong></label>
-                                                        <input type="text" class="form-control" name="" id="">
+                                                        <input type="password" class="form-control" name="" id="" placeholder="Input new password">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="" class="form-label"><strong>Confirm Password</strong></label>
-                                                        <input type="text" class="form-control" name="" id="">
+                                                        <input type="password" class="form-control" name="" id="" placeholder="Input confirm password">
                                                     </div>
                                                 </div>
                                                 <hr>
-                                                <div class="col-md-12">
-                                                    <button></button>
+                                                <div class="col-md-12 text-right">
+                                                    <button class="btn btn-success btn-sm">Update data</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -219,88 +177,32 @@
                 </div>
             </div>
         </div>
-
-        
         
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Order No - ABCD120932</h5>
+                        <h5 class="modal-title" id="title-detail"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="assets/images/products/digital_02.jpg" class="img-thumbnail" width="100px" alt="">
-                            </div>
-                            <div class="col-md-5">
-                                <h5><strong>Zomzang A50</strong></h5>
-                                <p class="text-muted">Lorem ipsum dolor..</p>
-                                <p class="">Rp. X.XXX.XXX</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><Strong>Quantity</Strong></p>
-                                <p>12</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><Strong>Total</Strong></p>
-                                <p>Rp. X.XXX.XXX</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="assets/images/products/digital_02.jpg" class="img-thumbnail" width="100px" alt="">
-                            </div>
-                            <div class="col-md-5">
-                                <h5><strong>Zomzang A50</strong></h5>
-                                <p class="text-muted">Lorem ipsum dolor..</p>
-                                <p class="">Rp. X.XXX.XXX</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><Strong>Quantity</Strong></p>
-                                <p>12</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><Strong>Total</Strong></p>
-                                <p>Rp. X.XXX.XXX</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="assets/images/products/digital_02.jpg" class="img-thumbnail" width="100px" alt="">
-                            </div>
-                            <div class="col-md-5">
-                                <h5><strong>Zomzang A50</strong></h5>
-                                <p class="text-muted">Lorem ipsum dolor..</p>
-                                <p class="">Rp. X.XXX.XXX</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><Strong>Quantity</Strong></p>
-                                <p>12</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><Strong>Subtotal</Strong></p>
-                                <p>Rp. X.XXX.XXX</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row text-muted">
-                            <div class="col">Sub: Rp. x.xxx.xxx</div>
-                            <div class="col">Ship: Rp. x.xxx.xxx</div>
-                            <div class="col">Tax: Rp. x.xxx.xxx</div>
-                            <div class="col">Total: Rp. x.xxx.xxx</div>
-                        </div>
+                    <div class="modal-body" id="history-order-detail">
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col text-right text-muted" id="total_detail">Total: Rp. x.xxx.xxx</div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <script src="assets/js/user/profile_info.js"></script>
+        <script src="assets/js/user/logout.js"></script>
+        <script src="assets/js/transaksi/transaksi_get.js"></script>
+        <script src="assets/js/transaksi_detail/transaksi_detail_get.js"></script>
+        <script src="assets/js/user/check_session.js"></script>
+        <script src="assets/js/user/logout.js"></script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

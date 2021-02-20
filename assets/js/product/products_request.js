@@ -29,14 +29,12 @@ var request = new XMLHttpRequest()
 
 request.open('GET', 'http://localhost:8000/api/products/toko/1', true);
 
-request.setRequestHeader('Authorization', 'Bearer ' + `eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzVkNWNiZjY2NzIzZjcwZGFlODRlOTUxOTAzODQ0ZWM2MDI5NjVlYjk5YmUzOTc5MTQyOGRiNjVhZTE3YTdkYzNmYjJjNzMwN2FmZDI5ZjYiLCJpYXQiOjE2MTM1NDQyMDAsIm5iZiI6MTYxMzU0NDIwMCwiZXhwIjoxNjQ1MDgwMjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.PS3ZOtwcObxzfU2VwUmzrk7vg0pvNOEVCxqRBF-Mcsku22k6oABlaPkhzLtTXhUWErwqCovBOLICMuIxrHall-XOGcWP0LJkNt9M9nKxAUpyCoWoZum8POlFQwDdcO2GofbaHiz06mR-_TS-tnBQb6nmYGtseyyf18-lCdCmgSjfIW3knVOEa5MF7mpLmkroZPN5XB3mVXjERkXEdtDhzqEWVg-qmHWEQeEj-htGfx09sjwhFY86LNdzdx7J0aWGKOGeN0tgy7tqqBfKBtO2c8Plkeesc9Tb4aL-kKAa0yl3IK_7oFooH-YO6Lw6hjmwkYPtWQcES_VcahXMssis6O8l6PpGWl5V809tSzTuMuIbpEq-67VaVHIzsetd0mRN_02H0r2hEepjmHcIqnKg8iOmqZrlKRnGdICAVCh6sNfkk97CDm_FaHO9eW_6jrXzFdeYvZJkp_B_VVM8eEtpbF2VAMM0BU1OOB9GosSwysYR79xaJYqYT8jfItnneBM33EHHrZgYmZH9-Q_CZCzNCUBTL7qAPKPQJ1pBf9us0JxLqJDMWdQF8fgqN3ucEOc6BatGHKE_7eg9KnzVt-C7QERE1TkMHNaKYW5LVzt72OzwtTelTSqzNta27g5uKv0AqXoW6ibhtNsGIo3VR41BpJxjuPBOr0va18ZEX-klIkE`);
-
 request.onload = function () {
     var data = JSON.parse(this.response);
 
     data.data.forEach(element => {
       const col_lg = document.createElement("div");
-      col_lg.setAttribute("class", "col-lg-4 mt-3");
+      col_lg.setAttribute("class", "col-lg-3 mt-3 col-md-4 col-sm-6");
       const card = document.createElement("div");
       card.setAttribute("class", "card");
       const img = document.createElement("img");
@@ -50,7 +48,7 @@ request.onload = function () {
       const p = document.createElement("p");
       p.setAttribute("class", "card-text");
       const title = document.createTextNode(element.name);
-      const deskripsi = document.createTextNode(element.deskripsi);
+      const deskripsi = document.createTextNode(element.deskripsi.substr(0,50)+"...");
       const footer_container = document.createElement("div");
       footer_container.setAttribute("class", "row mt-5");
       const price_container = document.createElement("div");

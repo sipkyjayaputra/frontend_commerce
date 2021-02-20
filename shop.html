@@ -33,17 +33,14 @@
                         </form>
                     </ul>
 
-                    <span class="badge badge-secondary d-none d-lg-block">Not signed in</span>
+                    <span class="badge d-none d-lg-block" id="login_status">Not signed in</span>
                     <div class="dropdown mx-3 nav-item">
                         <a class="dropdown-toggle  text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user fa-lg"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                            <a class="dropdown-item" href="index.html">Logout</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dd_user">
                         </div>
                     </div>
-                    <a href="cart.html" class="text-dark nav-item"><i class="fa fa-shopping-cart fa-lg mx-2"></i></a>
                 </div>
             </div>
         </nav>
@@ -54,8 +51,10 @@
             </div>
         </div>
 
-        <script src="assets/js/keranjang_post.js"></script>
-        <script src="assets/js/products_request.js"></script>
+        <script src="assets/js/user/check_session.js"></script>
+        <script src="assets/js/keranjang/keranjang_post.js"></script>
+        <script src="assets/js/product/products_request.js"></script>
+        <script src="assets/js/user/logout.js"></script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

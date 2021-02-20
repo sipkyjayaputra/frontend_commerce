@@ -10,6 +10,7 @@
         <!-- Font Awesome CDN-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
+        <script src="assets/js/user/redirect_login.js"></script>
         <title>HGS Commerce</title>
     </head>
     <body style="background-image: url('body-background.jpg'); background-repeat: no-repeat; background-size: cover;">
@@ -33,17 +34,14 @@
                         </form>
                     </ul>
 
-                    <span class="badge badge-secondary d-none d-lg-block">Not signed in</span>
+                    <span class="badge d-none d-lg-block" id="login_status">Not signed in</span>
                     <div class="dropdown mx-3 nav-item">
                         <a class="dropdown-toggle  text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user fa-lg"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                            <a class="dropdown-item" href="index.html">Logout</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dd_user">
                         </div>
                     </div>
-                    <a href="cart.html" class="text-dark nav-item"><i class="fa fa-shopping-cart fa-lg mx-2"></i></a>
                 </div>
             </div>
         </nav>
@@ -60,24 +58,24 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Your Name</label>
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name_html" placeholder="Your Name" onchange="return updateName()">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="phone_html" placeholder="Your Phone" onchange="return updatePhone()">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Address</label>
-                                        <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Address"></textarea>
+                                        <textarea name="" id="address_html" cols="30" rows="10" class="form-control" placeholder="Address" onchange="return updateAddress()"></textarea>
                                     </div>
                                     <hr>
                                     <h5>Cash on Delivery</h5>
                                     <div class="form-group">
-                                        <input type="radio" name="" id=""> <i>Pay with cash to the courier</i> 
+                                        <input type="radio" name="payment_html" id="payment_html" value="0" onchange="return updatePayment()"> <i>Pay with cash to the courier</i> 
                                     </div>
                                     <h5>Online Payment</h5>
                                     <div class="form-group">
-                                        <input type="radio" name="" id=""> <i>Pay with card payment</i> 
+                                        <input type="radio" name="payment_html" id="payment_html" value="1" onchange="return updatePayment()"> <i>Pay with card payment</i> 
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -85,19 +83,19 @@
                                         <div class="card-body">
                                             <div class="text-center">
                                                 <h3>Total</h3>
-                                                <h3>Rp. X.XXX.XXX</h3>
+                                                <h3 id="total_checkout">Rp. X.XXX.XXX</h3>
                                             </div>
                                             <div class="dropdown-divider my-5"></div>
                                             <div class="">
-                                                <form action="" class="form">
-                                                    <div class="form-group">
-                                                        <span class="badge badge-info pb-1">Note</span> <label for="additional_note">Additional Note</label>
-                                                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Write some additional note here"></textarea>
-                                                    </div>
-                                                    <div class="form-group mt-5">
-                                                        <button type="submit" class="form-control btn btn-primary">Proceed to Checkout</button>
-                                                    </div>
-                                                </form>
+                                                <div class="form-group">
+                                                    <span class="badge badge-info pb-1">Note</span> <label for="additional_note">Additional Note</label>
+                                                    <textarea name="" id="note_html" cols="30" rows="5" onchange="return updateNote()" class="form-control" placeholder="Write some additional note here"></textarea>
+                                                </div>
+                                                <div class="form-group mt-5">
+                                                    <button type="submit" class="form-control btn btn-primary" onclick="return tambahTransaksi()">Checkout</button>
+                                                    
+                                                </div>
+                                                <a href="cart.html" class="mt-5 btn btn-danger" > <i class="fa fa-arrow-left fa-sm"></i> Back to Order</a>
                                             </div>
                                         </div>
                                     </div>
@@ -109,6 +107,10 @@
             </div>
         </div>
 
+        <script src="assets/js/transaksi/transaksi_post.js"></script>
+        <script src="assets/js/transaksi/transaksi_information.js"></script>
+        <script src="assets/js/user/check_session.js"></script>
+        <script src="assets/js/user/logout.js"></script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
